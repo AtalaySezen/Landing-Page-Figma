@@ -20,7 +20,7 @@ header {
 
 .navbar {
     margin: 0 auto;
-    width: 1260px;
+    width: 100%;
     display: flex;
     position: relative;
     padding: 14px 16px;
@@ -36,7 +36,6 @@ header {
 }
 
 .nav-center {
-    flex: 2;
     order: 2;
     display: flex;
     flex-direction: row;
@@ -88,6 +87,91 @@ li {
     padding: 12px 32px;
     background-color: #fff;
 }
+/*Hamburger menü css */
+#menu__toggle {
+    opacity: 0;
+  }
+  #menu__toggle:checked + .menu__btn > span {
+    transform: rotate(45deg);
+  }
+  #menu__toggle:checked + .menu__btn > span::before {
+    top: 0;
+    transform: rotate(0deg);
+  }
+  #menu__toggle:checked + .menu__btn > span::after {
+    top: 0;
+    transform: rotate(90deg);
+  }
+  #menu__toggle:checked ~ .menu__box {
+    left: 0 !important;
+  }
+  .menu__btn {
+    position: relative;
+    top: 45px;
+    right: 3rem;
+    width: 26px;
+    height: 26px;
+    cursor: pointer;
+    z-index: 1;
+  }
+  .menu__btn > span,
+  .menu__btn > span::before,
+  .menu__btn > span::after {
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background-color: white;
+    transition-duration: .25s;
+  }
+  .menu__btn > span::before {
+    content: '';
+    top: -8px;
+  }
+  .menu__btn > span::after {
+    content: '';
+    top: 8px;
+  }
+  .menu__box {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: -100%;
+    width: 300px;
+    height:auto;
+    margin: 0;
+    padding: 80px 0;
+    list-style: none;
+    background-color: #ECEFF1;
+    box-shadow: 2px 2px 6px rgba(0, 0, 0, .4);
+    transition-duration: .25s;
+  }
+  .menu__item {
+    display: block;
+    padding: 12px 24px;
+    color: #333;
+    font-family: 'Roboto', sans-serif;
+    font-size: 20px;
+    font-weight: 600;
+    text-decoration: none;
+    transition-duration: .25s;
+  }
+  .menu__item:hover {
+    background-color: #CFD8DC;
+  }
+
+@media(min-width:900px){
+    .hamburger-menu{
+        display: none;
+    }
+}
+
+@media(max-width:900px){
+    .navbar{
+        display: none;
+    }
+}
+
 
 /*Wrapper burada */
 .wrapper {
@@ -229,7 +313,6 @@ li {
     font-size: 18px;
     line-height: 150%;
     color: #000000;
-    width: 666px;
 }
 
 .white-section {
@@ -247,6 +330,7 @@ li {
 
 .hero-header {
     font-style: normal;
+    text-align: left;
     font-weight: 700;
     font-size: 64px;
     line-height: 76px;
@@ -292,7 +376,6 @@ li {
 
 .platform-header {
     padding-top: 140px;
-    width: 1160px;
     font-style: normal;
     font-weight: 700;
     font-size: 64px;
@@ -302,11 +385,15 @@ li {
 }
 
 .platform-cards {
+    width: 100%;
     display: flex;
     margin-top: 80px;
     flex-direction: row;
     position: relative;
     align-items: center;
+}
+.platform-cards img{
+    width: 100%;
 }
 
 .tweets-area {
@@ -353,7 +440,6 @@ li {
 }
 
 .price-header {
-    width: 1160px;
     font-style: normal;
     font-weight: 700;
     font-size: 64px;
@@ -457,6 +543,8 @@ input:checked+.slider:before {
     flex-direction: row;
     align-items: center;
     margin-top: 40px;
+    width: 100%;
+    flex-wrap: wrap;
 }
 .info-1{
     display: flex;
@@ -556,4 +644,73 @@ input:checked+.slider:before {
 .info-2 .trial-btn{
     background-color: #000000;
     color: white;
+}
+
+
+@media(max-width:900px){
+   .header-1, .header-2{
+       font-size: 32px;
+   }
+   .content-area{
+       height: auto;
+   }
+   .text-gray{
+       font-size: 14px;
+       text-align: center;
+       width: 500px;
+       margin: 15px auto;
+   }
+   .get-start{
+    width: 180px;
+    height: 57px;
+    font-size: 15px;
+    padding: 10px;
+   }
+   .start-image{
+       width: 30%;
+   }
+   .tab-header{
+       font-size: 36px;
+   }
+   .findtrend{
+       width: 339px;
+       height: 118px;
+   }
+   .findtrend img{
+       width: 80%;
+   }
+   .image-right{
+    position: relative;
+    width: 100%;
+    bottom: 12rem;
+    right: -11rem;
+   }
+   .image-left{
+    bottom: 5.6rem;
+    right: 18rem;
+   }
+   .green-text{
+       font-size: 14px;
+       width: 286px;
+   }
+   .hero-header{
+       padding: 5px;
+       font-size: 36px;
+   }
+   .brand-header{
+       font-size: 36px;
+       font-weight: 900;
+   }
+   .platform-header{
+       font-size: 36px;
+   }
+   .price-header{
+       font-size: 36px;
+   }
+   .price-span{
+       font-size: 18px;
+   }
+   .price-span2{
+       font-size: 18px;
+   }
 }
