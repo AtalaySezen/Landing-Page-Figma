@@ -10,6 +10,7 @@ body {
     font-family: 'Poppins', sans-serif;
     width: 100%;
     background-image: url('/images/background.png');
+    overflow-x: hidden;
 
 }
 
@@ -90,7 +91,7 @@ li {
 
 /*Wrapper burada */
 .wrapper {
-    width: 100%;
+    width: 100vw;
     margin: 0 auto;
 
 
@@ -245,7 +246,6 @@ li {
 }
 
 .hero-header {
-
     font-style: normal;
     font-weight: 700;
     font-size: 64px;
@@ -254,6 +254,7 @@ li {
 
 .brand-area {
     padding-top: 140px;
+    padding-bottom: 140px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -273,8 +274,286 @@ li {
     text-align: center;
     margin-bottom: 5rem;
 }
-.image-brand img{
+
+.image-brand img {
     width: 100%;
     height: 506px;
 
+}
+
+.all-platforms {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    background-color: #FAFAFA;
+}
+
+.platform-header {
+    padding-top: 140px;
+    width: 1160px;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 64px;
+    line-height: 76px;
+    text-align: center;
+    color: #000000;
+}
+
+.platform-cards {
+    display: flex;
+    margin-top: 80px;
+    flex-direction: row;
+    position: relative;
+    align-items: center;
+}
+
+.tweets-area {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 77px;
+}
+
+.tweets-area img {
+    width: 100%;
+}
+
+.tweet-2 {
+    margin-top: 43px;
+}
+
+.tweet-3 {
+    margin-top: 40px;
+}
+
+.trend-button {
+    margin-top: 80px;
+    margin-bottom: 140px;
+    width: 198px;
+    height: 57px;
+    border-radius: 40px;
+    color: #fff;
+    background-color: #000000;
+}
+
+.prices {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    background: #000000;
+}
+
+.price-contents {
+    margin-top: 140px;
+}
+
+.price-header {
+    width: 1160px;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 64px;
+    line-height: 76px;
+    text-align: center;
+    color: #FFFFFF;
+}
+
+.price-informations {
+    display: flex;
+    flex-direction: row;
+}
+
+.toggle-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.price-span {
+    color: white;
+    font-size: 24px;
+    line-height: 29px;
+    font-weight: 500;
+    padding: 0 30px;
+}
+
+.price-span2 {
+    color: #F5F5F5;
+    opacity: 0.5;
+    font-size: 24px;
+    line-height: 29px;
+    font-weight: 500;
+    padding: 0 30px;
+}
+
+.save-price {
+    width: 100%;
+}
+
+.switch {
+    position: relative;
+    display: inline-flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    width: 104px;
+    height: 52px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #fff;
+    -webkit-transition: 0.4s;
+    transform: translate(0px, 0px);
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    top: 9px;
+    left: 13px;
+    height: 36px;
+    width: 36px;
+    background-color: #A8FF35;
+    -webkit-transition: 0.4s;
+    transition: 0.4s;
+}
+
+input:checked+.slider {
+    background-color: #1e2321;
+}
+
+input:checked+.slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(40px);
+}
+
+.slider.round {
+    border-radius: 34px;
+}
+
+.slider.round:before {
+    border-radius: 50%;
+}
+.price-cards{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-top: 40px;
+}
+.info-1{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding-top: 32px;
+    padding-left: 32px;
+    width: 360px;
+    height: 640px;
+    border-radius: 16px;
+    background-color: #FAFAFA;
+    margin: 0 15px;
+}
+.svg-line{
+    margin-top: 32px;
+    margin-bottom: 32px;
+}
+.info-header{
+    font-size: 36px;
+    line-height: 36px;
+    font-weight: 400;
+    color: #000000;
+}
+.info-subheader{
+    font-size: 18px;
+    line-height: 18px;
+    font-weight: 400;
+    color: #000000;
+}
+.price{
+    font-size: 64px;
+    line-height: 100%;
+    font-weight: 400;
+    color: #000000;
+}
+.small-price{
+    font-size: 18px;
+    line-height: 18px;
+    font-weight: 400;
+    color: #000000;
+}
+.benefits-customer{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    text-align: center;
+}
+.benefit-margin{
+    margin-bottom: 10px;
+    margin-top: ;
+}
+.benefit-1{
+    color: #000000;
+    font-size: 18px;
+    line-height: 100%;
+    font-weight: 400;
+    
+}
+.benefits-customer2{
+    display: flex;
+    flex-direction: row;
+
+    
+}
+.benefits-customer3{
+    display: flex;
+    flex-direction: row;
+    position: relative;
+
+}
+.start-btn{
+    margin-top: 54px;
+}
+.trial-btn{
+  width: 296px;
+  height: 58px;
+  background: #A8FF35;
+  border-radius: 29px;
+  border: none;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 25.2px;
+  align-items: center;
+}
+.info-2{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding-top: 32px;
+    padding-left: 32px;
+    width: 360px;
+    height: 640px;
+    border-radius: 16px;
+    background-color: #A8FF35;
+    margin: 0 15px;
+}
+.info-2 .trial-btn{
+    background-color: #000000;
+    color: white;
 }
