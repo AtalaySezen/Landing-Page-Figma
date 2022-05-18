@@ -14,6 +14,14 @@ body {
 
 }
 
+button:hover {
+    cursor: pointer;
+}
+
+a:hover {
+    cursor: pointer;
+}
+
 header {
     height: 99px;
 }
@@ -87,85 +95,9 @@ li {
     padding: 12px 32px;
     background-color: #fff;
 }
-/*Hamburger menü css */
-#menu__toggle {
-    opacity: 0;
-  }
-  #menu__toggle:checked + .menu__btn > span {
-    transform: rotate(45deg);
-  }
-  #menu__toggle:checked + .menu__btn > span::before {
-    top: 0;
-    transform: rotate(0deg);
-  }
-  #menu__toggle:checked + .menu__btn > span::after {
-    top: 0;
-    transform: rotate(90deg);
-  }
-  #menu__toggle:checked ~ .menu__box {
-    left: 0 !important;
-  }
-  .menu__btn {
-    position: relative;
-    top: 45px;
-    right: 3rem;
-    width: 26px;
-    height: 26px;
-    cursor: pointer;
-    z-index: 1;
-  }
-  .menu__btn > span,
-  .menu__btn > span::before,
-  .menu__btn > span::after {
-    display: block;
-    position: absolute;
-    width: 100%;
-    height: 2px;
-    background-color: white;
-    transition-duration: .25s;
-  }
-  .menu__btn > span::before {
-    content: '';
-    top: -8px;
-  }
-  .menu__btn > span::after {
-    content: '';
-    top: 8px;
-  }
-  .menu__box {
-    display: block;
-    position: fixed;
-    top: 0;
-    left: -100%;
-    width: 300px;
-    height:auto;
-    margin: 0;
-    padding: 80px 0;
-    list-style: none;
-    background-color: #ECEFF1;
-    box-shadow: 2px 2px 6px rgba(0, 0, 0, .4);
-    transition-duration: .25s;
-  }
-  .menu__item {
-    display: block;
-    padding: 12px 24px;
-    color: #333;
-    font-family: 'Roboto', sans-serif;
-    font-size: 20px;
-    font-weight: 600;
-    text-decoration: none;
-    transition-duration: .25s;
-  }
-  .menu__item:hover {
-    background-color: #CFD8DC;
-  }
 
-@media(min-width:900px){
-    .hamburger-menu{
-        display: none;
-    }
-}
 
+/*Hambürger menü CSSleri*/
 @media(max-width:900px){
     .navbar{
         display: none;
@@ -173,12 +105,12 @@ li {
 }
 
 
+
+
 /*Wrapper burada */
 .wrapper {
     width: 100vw;
     margin: 0 auto;
-
-
 }
 
 .container {
@@ -191,8 +123,8 @@ li {
 
 .content-area {
     margin-top: 99px;
-    width: 700px;
-    height: 337.63px;
+    width: 100%;
+    height: auto;
     text-align: center;
 
 }
@@ -264,8 +196,12 @@ li {
     justify-content: center;
     align-items: center;
     background-color: rgba(168, 255, 53, 1);
-    height: 742px;
     width: 100%;
+}
+
+.green-text {
+    margin-bottom: 140px;
+    width: 50%;
 }
 
 .tab-header {
@@ -320,12 +256,13 @@ li {
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    height: 584px;
     background-color: #FFFFFF;
 }
 
 .white-hero {
     width: 1160px;
+    margin-top: 140px;
+    margin-bottom: 140px;
 }
 
 .hero-header {
@@ -334,6 +271,15 @@ li {
     font-weight: 700;
     font-size: 64px;
     line-height: 76px;
+}
+
+.hero-header2 {
+    font-style: normal;
+    text-align: left;
+    font-weight: 700;
+    font-size: 64px;
+    line-height: 76px;
+    color: #ADADAD;
 }
 
 .brand-area {
@@ -393,7 +339,8 @@ li {
     position: relative;
     align-items: center;
 }
-.platform-cards img{
+
+.platform-cards img {
     width: 100%;
 }
 
@@ -539,89 +486,103 @@ input:checked+.slider:before {
 .slider.round:before {
     border-radius: 50%;
 }
-.price-cards{
+
+.price-cards {
     display: flex;
     flex-direction: row;
     align-items: center;
     margin-top: 40px;
     width: 100%;
+    padding-bottom: 140px;
     flex-wrap: wrap;
 }
 
-.svg-line{
+.svg-line {
     margin-top: 32px;
     margin-bottom: 32px;
 }
-.info-header{
+
+.info-header {
     font-size: 36px;
     line-height: 36px;
     font-weight: 400;
     color: #000000;
 }
-.info-subheader{
+
+.info-subheader {
     font-size: 18px;
     line-height: 18px;
     font-weight: 400;
     color: #000000;
 }
-.price{
+
+.price {
     font-size: 64px;
     line-height: 100%;
     font-weight: 400;
     color: #000000;
 }
-.small-price{
+
+.small-price {
     font-size: 18px;
     line-height: 18px;
     font-weight: 400;
     color: #000000;
 }
-.benefits-customer{
+
+.benefits-customer {
     display: flex;
     flex-direction: row;
     align-items: center;
     text-align: center;
 }
-.benefit-margin{
+
+.benefit-margin {
     margin-bottom: 10px;
     margin-top: ;
 }
-.benefit-1{
+
+.benefit-1 {
     color: #000000;
     font-size: 18px;
     line-height: 100%;
     font-weight: 400;
-    
+
 }
-.benefits-customer2{
+
+.benefits-customer2 {
     display: flex;
     flex-direction: row;
 
-    
+
 }
-.benefits-customer3{
+
+.benefits-customer3 {
     display: flex;
     flex-direction: row;
     position: relative;
 
 }
-.start-btn{
+
+.start-btn {
     margin-top: 54px;
 }
-.trial-btn{
-  width: 296px;
-  height: 58px;
-  background: #A8FF35;
-  border-radius: 29px;
-  border: none;
-  font-size: 18px;
-  font-weight: 700;
-  line-height: 25.2px;
-  align-items: center;
-  padding: 15px 0px;
-  text-align: center;
+
+.trial-btn {
+    width: 296px;
+    height: 58px;
+    background: #A8FF35;
+    border-radius: 29px;
+    border: none;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 25.2px;
+    align-items: center;
+    padding: 15px 0px;
+    text-align: center;
 }
-.trial-btn2{
+
+.trial-btn2 {
     width: 296px;
     height: 58px;
     background: black;
@@ -634,84 +595,98 @@ input:checked+.slider:before {
     align-items: center;
     padding: 15px 0px;
     text-align: center;
-  }
-.price-cards{
+}
+
+.price-cards {
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
 }
-.info-1{
-    flex-basis:360px;
+
+.info-1 {
+    flex-basis: 360px;
     height: 640px;
     background-color: #FAFAFA;
     border-radius: 16px;
     margin: 10px 15px;
     position: relative;
 }
-.info-2{
-    flex-basis:360px;
+
+.info-2 {
+    flex-basis: 360px;
     height: 640px;
     background: #A8FF35;
     border-radius: 16px;
     margin: 10px 15px;
     position: relative;
 }
-.card-header{
+
+.card-header {
     color: white;
     font-size: 36px;
     color: #000000;
     line-height: 100%;
     font-weight: 400;
 }
-.info-contents{
+
+.info-contents {
     display: flex;
     flex-direction: column;
     padding: 25px 20px;
 }
-.card-subheader{
+
+.card-subheader {
     font-style: normal;
     font-weight: 400;
     font-size: 18px;
     line-height: 100%;
 }
-.month-price{
+
+.month-price {
     font-size: 64px;
     font-weight: 400;
     line-height: 100%;
     color: #000000;
 }
-.small-price{
+
+.small-price {
     font-size: 18px;
     font-weight: 400;
     line-height: 100%;
 }
-.card-subcontents{
+
+.card-subcontents {
     width: 100%;
     display: flex;
     flex-direction: column;
     padding: 20px 15px;
 }
-.customer-1{
+
+.customer-1 {
     display: flex;
     align-items: center;
     padding: 15px 0px;
 }
-.customer-benefit{
-font-size: 18px;
-font-weight: 400;
-line-height: 18px;
-padding: 5px 7px;
+
+.customer-benefit {
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 18px;
+    padding: 5px 7px;
 }
-.button-group{
+
+.button-group {
     position: absolute;
     bottom: 2rem;
 }
-.tik-infos{
+
+.tik-infos {
     margin: 10px 0;
 }
-.footer-green{
+
+.footer-green {
     display: flex;
     width: 100%;
     height: 539px;
@@ -720,24 +695,28 @@ padding: 5px 7px;
     align-items: center;
     background-color: #A8FF35;
 }
-.footer-header{
+
+.footer-header {
     font-size: 72px;
     line-height: 112%;
     font-weight: 900;
     text-align: center;
     color: #000000;
 }
-.green-opacity{
+
+.green-opacity {
     font-weight: 900;
     font-size: 72px;
     line-height: 112%;
     text-align: center;
     color: #87D322;
 }
-.button-footer{
+
+.button-footer {
     margin-top: 40px;
 }
-.btn-join{
+
+.btn-join {
     width: 180px;
     height: 57px;
     border-radius: 40px;
@@ -748,7 +727,7 @@ padding: 5px 7px;
     font-weight: 700;
 }
 
-.footer-bottom{
+.footer-bottom {
     height: 100px;
     bottom: 0;
     width: 100%;
@@ -761,14 +740,17 @@ padding: 5px 7px;
     overflow: hidden;
     padding: 0px 20px;
 }
-.logo-footer{
+
+.logo-footer {
     /* flex: 2; */
     margin: 0px 35px;
 }
-.logo-footer img{
+
+.logo-footer img {
     width: 150px;
 }
-.footer-infos{
+
+.footer-infos {
     display: flex;
     flex-direction: row;
     /* flex: 1; */
@@ -776,95 +758,211 @@ padding: 5px 7px;
 
 }
 
-
-
-.footer-text{
-font-size: 18px;
-font-weight: 400;
-line-height: 18px;
-letter-spacing: 0em;
-text-align: center;
-padding: 0px 15px;
+.footer-text {
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 18px;
+    letter-spacing: 0em;
+    text-align: center;
+    padding: 0px 15px;
 
 }
 
 
+@media(max-width:900px) {
+    body {
+        width: auto;
+        overflow-x: hidden;
+    }
 
+    .wrapper {
+        width: auto;
+        overflow: hidden;
 
+    }
 
+    .header-1,
+    .header-2 {
+        font-size: 32px;
+    }
 
+    .content-area {
+        height: auto;
+        width: 100%;
+        margin-top: 40px;
+    }
 
+    .text-gray {
+        font-size: 14px;
+        text-align: center;
+        margin: 15px auto;
+    }
 
-@media(max-width:900px){
-   .header-1, .header-2{
-       font-size: 32px;
-   }
-   .content-area{
-       height: auto;
-   }
-   .text-gray{
-       font-size: 14px;
-       text-align: center;
-       width: 500px;
-       margin: 15px auto;
-   }
-   .get-start{
-    width: 180px;
-    height: 57px;
-    font-size: 15px;
-    padding: 10px;
-   }
-   .start-image{
-       width: 30%;
-   }
-   .tab-header{
-       font-size: 36px;
-   }
-   .findtrend{
-       width: 339px;
-       height: 118px;
-   }
-   .findtrend img{
-       width: 80%;
-   }
-   .image-right{
-    position: relative;
-    width: 100%;
-    bottom: 12rem;
-    right: -11rem;
-   }
-   .image-left{
-    bottom: 0.3rem;
-    right: 11rem;
-   }
-   .save-price{
-       width: 20%;
-    top: 15rem;
-    right: 6rem;
-    position: absolute;
-   }
-   .green-text{
-       font-size: 14px;
-       width: 286px;
-   }
-   .hero-header{
-       padding: 15px;
-       font-size: 36px;
-   }
-   .brand-header{
-       font-size: 36px;
-       font-weight: 900;
-   }
-   .platform-header{
-       font-size: 36px;
-   }
-   .price-header{
-       font-size: 36px;
-   }
-   .price-span{
-       font-size: 18px;
-   }
-   .price-span2{
-       font-size: 18px;
-   }
+    .get-start {
+        width: 180px;
+        height: 57px;
+        font-size: 15px;
+        padding: 10px;
+    }
+
+    .start-image {
+        width: 30%;
+    }
+
+    .tab-header {
+        font-size: 32px;
+    }
+
+    .findtrend {
+        width: 339px;
+        height: 118px;
+    }
+
+    .findtrend img {
+        width: 80%;
+    }
+
+    .image-right {
+        position: relative;
+        width: 100%;
+        bottom: 12rem;
+        right: -11rem;
+    }
+
+    .image-left {
+        bottom: 0.3rem;
+        right: 11rem;
+    }
+
+    .save-price {
+        width: 20%;
+        top: 15rem;
+        right: 6rem;
+        position: absolute;
+    }
+
+    .green-text {
+        font-size: 14px;
+        width: 286px;
+    }
+
+    .hero-header {
+        font-size: 36px;
+        text-align: left;
+        margin-top: 5rem;
+        font-weight: 900;
+        margin-bottom: 5rem;
+    }
+
+    .hero-header2 {
+        font-weight: 900;
+        font-size: 36px;
+        text-align: left;
+    }
+    .brand-area{
+        height: auto;
+        padding-top: 0;
+    }
+    .brand-header {
+        font-size: 36px;
+        font-weight: 900;
+        margin-bottom: 0;
+    }
+    .image-brand img{
+        height: auto;
+    }
+
+    .platform-header {
+        font-size: 36px;
+        font-weight: 900;
+        text-align: center;
+        padding: 0;
+        margin: 0;
+    }
+
+    .price-header {
+        font-size: 36px;
+    }
+    .white-hero {
+        width: 1160px;
+        margin-top: 0;
+        margin-bottom: 0px;
+    }
+    .platform-cards{
+        margin: 0;
+        width: 100%;
+        height: auto;
+    }
+    .price-span {
+        font-size: 18px;
+    }
+    .tweets-area{
+        margin-top: 0;
+        width: 100%;
+        height: auto;
+    }
+    .tweets-area img{
+        width: 100%;
+    }
+    .trend-button{
+        margin-bottom: 20px;
+    }
+
+    .price-span2 {
+        font-size: 18px;
+    }
+
+    .footer-green {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .green-footer {
+        font-size: 36px;
+        font-weight: 900;
+        line-height: 40px;
+        letter-spacing: 0em;
+        text-align: center;
+    }
+
+    .green-opacity {
+        font-size: 36px;
+        font-weight: 900;
+        line-height: 40px;
+        letter-spacing: 0em;
+        text-align: center;
+
+    }
+
+    .btn-join {
+        width: 106px;
+        height: 44px;
+        text-align: center;
+        font-size: 14px;
+        font-weight: 700;
+        line-height: 19.6px;
+    }
+
+    .footer-bottom {
+        display: flex;
+        flex-direction: column;
+        overflow: auto;
+        height: auto;
+        padding-top: 2rem;
+    }
+
+    .footer-text {
+        padding: 15px 15px;
+    }
+
+    .footer-infos {
+        display: flex;
+        flex-direction: column;
+        height: auto;
+        padding: 15px 15px;
+        margin-bottom: 25px;
+    }
+
 }
