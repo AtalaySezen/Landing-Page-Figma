@@ -1,5 +1,13 @@
-const hamburgerMenu = document.getElementById('btn-hamburger');
+function myFunction(x) {
+    x.classList.toggle("change");
+  }
 
-const sectionHamburger= document.getElementById('section-hamburger');
+const hamburgerButton = document.getElementById('hamburgerButton');
 
-if(window.)
+const mobileLinks = document.getElementById('mobileLinks');
+
+hamburgerButton.addEventListener('click',function showMenu(){
+        hamburgerButton.classList.toggle('change')
+        mobileLinks.classList.toggle('hide');
+})
+
