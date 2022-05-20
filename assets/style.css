@@ -95,8 +95,6 @@ li {
     padding: 12px 32px;
     background-color: #fff;
 }
-
-
 /*Hambürger menü CSSleri*/
 .hamburger-menu>div {
     width: 35px;
@@ -104,7 +102,6 @@ li {
     background-color: white;
     margin: 6px 0;
 }
-
 .bar1,
 .bar2,
 .bar3 {
@@ -204,11 +201,6 @@ li {
         display: none;
     }
 }
-
-
-
-
-/*Wrapper burada */
 .wrapper {
     width: 100vw;
     margin: 0 auto;
@@ -843,8 +835,7 @@ input:checked+.slider {
     padding: 0px 20px;
 }
 
-.logo-footer {
-    /* flex: 2; */
+.logo-footer { 
     margin: 0px 35px;
 }
 
@@ -855,9 +846,7 @@ input:checked+.slider {
 .footer-infos {
     display: flex;
     flex-direction: row;
-    /* flex: 1; */
     margin: 0px 35px;
-
 }
 
 .footer-text {
@@ -867,10 +856,7 @@ input:checked+.slider {
     letter-spacing: 0em;
     text-align: center;
     padding: 0px 15px;
-
 }
-
-
 @media(max-width:900px) {
     body {
         width: auto;
@@ -926,31 +912,26 @@ input:checked+.slider {
     .findtrend img {
         width: 80%;
     }
-
     .image-right {
         position: relative;
         width: 100%;
         bottom: 12rem;
         right: -11rem;
     }
-
     .image-left {
         bottom: 0.3rem;
         right: 11rem;
     }
-
     .save-price {
         width: 20%;
         top: 3rem;
         right: 7rem;
         position: relative;
     }
-
     .green-text {
         font-size: 14px;
         width: 286px;
     }
-
     .hero-header {
         font-size: 36px;
         text-align: left;
@@ -958,28 +939,23 @@ input:checked+.slider {
         font-weight: 900;
         margin-bottom: 5rem;
     }
-
     .hero-header2 {
         font-weight: 900;
         font-size: 36px;
         text-align: left;
     }
-
     .brand-area {
         height: auto;
         padding-top: 0;
     }
-
     .brand-header {
         font-size: 36px;
         font-weight: 900;
         margin-bottom: 0;
     }
-
     .image-brand img {
         height: auto;
     }
-
     .platform-header {
         font-size: 36px;
         font-weight: 900;
@@ -987,52 +963,42 @@ input:checked+.slider {
         padding: 0;
         margin: 0;
     }
-
     .price-header {
         font-size: 36px;
     }
-
     .white-hero {
         width: 1160px;
         margin-top: 0;
         margin-bottom: 0px;
     }
-
     .platform-cards {
         margin: 0;
         width: 100%;
         height: auto;
     }
-
     .price-span {
         font-size: 18px;
     }
-
     .tweets-area {
         margin-top: 0;
         width: 100%;
         height: auto;
     }
-
     .tweets-area img {
         width: 100%;
     }
-
     .trend-button {
         margin-bottom: 20px;
     }
-
     .price-span2 {
         font-size: 18px;
     }
-
     .footer-green {
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
     }
-
     .green-footer {
         font-size: 36px;
         font-weight: 900;
@@ -1040,7 +1006,6 @@ input:checked+.slider {
         letter-spacing: 0em;
         text-align: center;
     }
-
     .green-opacity {
         font-size: 36px;
         font-weight: 900;
@@ -1049,7 +1014,6 @@ input:checked+.slider {
         text-align: center;
 
     }
-
     .btn-join {
         width: 106px;
         height: 44px;
@@ -1058,7 +1022,6 @@ input:checked+.slider {
         font-weight: 700;
         line-height: 19.6px;
     }
-
     .footer-bottom {
         display: flex;
         flex-direction: column;
@@ -1066,11 +1029,9 @@ input:checked+.slider {
         height: auto;
         padding-top: 2rem;
     }
-
     .footer-text {
         padding: 15px 15px;
     }
-
     .footer-infos {
         display: flex;
         flex-direction: column;
@@ -1078,7 +1039,6 @@ input:checked+.slider {
         padding: 15px 15px;
         margin-bottom: 25px;
     }
-
 }
 
 .none{

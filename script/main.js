@@ -6,14 +6,13 @@ hamburgerButton.addEventListener('click',function showMenu(){
         mobileLinks.classList.toggle('hide');
 })
 
-
 const checkBox =document.getElementById('checkbox');
 const priceOne = document.getElementById('price-1');
 const priceOneNew = document.getElementById('price1-new');
-
 const priceThird = document.getElementById('price-3');
-
 const priceThirdNew = document.getElementById('price3-new');
+
+
 
 checkBox.addEventListener('click',function(){
         priceOne.classList.toggle('none')
