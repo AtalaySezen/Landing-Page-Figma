@@ -507,6 +507,7 @@ li {
     justify-content: center;
     align-items: center;
     text-align: center;
+    position: relative;
 }
 
 .price-span {
@@ -557,6 +558,11 @@ li {
     -webkit-transition: 0.4s;
     transform: translate(0px, 0px);
 }
+input:checked+.slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(40px);
+}
 
 .slider:before {
     position: absolute;
@@ -574,11 +580,6 @@ input:checked+.slider {
     background-color: #1e2321;
 }
 
-input:checked+.slider:before {
-    -webkit-transform: translateX(26px);
-    -ms-transform: translateX(26px);
-    transform: translateX(40px);
-}
 
 .slider.round {
     border-radius: 34px;
@@ -886,6 +887,9 @@ input:checked+.slider:before {
     .header-2 {
         font-size: 32px;
     }
+    .price-contents {
+        margin-top: 5px;
+    }
 
     .content-area {
         height: auto;
@@ -937,9 +941,9 @@ input:checked+.slider:before {
 
     .save-price {
         width: 20%;
-        top: 15rem;
-        right: 6rem;
-        position: absolute;
+        top: 3rem;
+        right: 7rem;
+        position: relative;
     }
 
     .green-text {
