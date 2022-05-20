@@ -1,0 +1,25 @@
+
+{
+    "users":[
+        {"id":1,"name":"Atalay Sezen","age":"25","projectId":1},
+        {"id":2,"name":"Aybars Sezen","age":"22","projectId":2},
+        {"id":3,"name":"Kevser Üstün","age":"47","projectId":3}
+    ],
+
+    "projects":[
+        {"id":1,
+         "title":"Javascript",
+         "description":"Javascript ile validation yapılması"
+        },
+        {
+            "id":2,
+            "title":"React",
+            "description":"React kullanılarak instagram klonu yapılması"
+        },
+        {
+            "id":3,
+            "title":"Github",
+            "description":"Github klonu yapılması"
+        }
+    ]
+}

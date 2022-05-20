@@ -5,7 +5,7 @@ const form = document.getElementById('form');
 const email = document.getElementById('email');
 const errorUser =  document.getElementById('userError');
 
-//Email reg
+//Email reg 
 var reg = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
 
 form.addEventListener("submit",(e)=>{
@@ -22,7 +22,6 @@ form.addEventListener("submit",(e)=>{
     else{
         userName.classList.add('green');
     }
-
     if(password.value !== rePassword.value){
         password.classList.add('red')
         errorUser.innerHTML = "password is not match";
@@ -37,7 +36,6 @@ form.addEventListener("submit",(e)=>{
         password.value == rePassword.value;
         password.classList.add("green")&rePassword.classList.add("green");
     }
-
     if (reg.test(email) == false) 
     {
         errorUser.innerHTML = "E-mail adress is not correct"
@@ -48,7 +46,7 @@ form.addEventListener("submit",(e)=>{
     }else{
         (reg.test(email) == true );
         email.classList.add('green')
-
     }
 
 })
+
