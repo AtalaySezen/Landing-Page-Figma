@@ -1080,3 +1080,7 @@ input:checked+.slider {
     }
 
 }
+
+.none{
+    display: none;
+}

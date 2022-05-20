@@ -169,7 +169,7 @@
                 <div class="toggle-btn">
                     <span class="price-span">Monthly</span>
                     <label class="switch">
-                        <input type="checkbox" id="checbox" />
+                        <input type="checkbox" id="checkbox" />
                         <span class="slider round" ></span>
                     </label>
                     <span class="price-span2">Yearly</span>
@@ -192,8 +192,11 @@
                             </svg>
                         </div>
                         <div class="card-subcontents">
-                            <h1 class="month-price">
+                            <h1 class="month-price" id="price-1">
                                 $8<small class="small-price">/Month</small>
+                            </h1>
+                            <h1 class="month-price none" id="price1-new">
+                                $15<small class="small-price">/Month</small>
                             </h1>
                             <div class="tik-infos">
                                 <div class="customer-1">
@@ -225,8 +228,10 @@
                                             d="M13.6946 0.931356C14.1467 1.45305 14.0904 2.2425 13.5687 2.69463L6.06866 9.19463C5.57308 9.62413 4.82984 9.59762 4.36612 9.1339L0.366117 5.1339C-0.122039 4.64575 -0.122039 3.85429 0.366117 3.36614C0.854272 2.87798 1.64573 2.87798 2.13388 3.36614L5.31088 6.54314L11.9313 0.805408C12.453 0.353273 13.2425 0.409662 13.6946 0.931356Z"
                                             fill="black" />
                                     </svg>
-                                    <p class="customer-benefit">
+                                    <p class="customer-benefit" id="text-customer">
                                         5 Days group page saved </p>
+                                        <p class="customer-benefit none" id="text-customer-2">
+                                            10 Days group page saved </p>
                                 </div>
                                 <div class="button-group">
                                     <div class="trial-btn">
@@ -256,6 +261,7 @@
                             <h1 class="month-price">
                                 $20<small class="small-price">/Month</small>
                             </h1>
+                            
                             <div class="tik-infos">
                                 <div class="customer-1">
                                     <svg width="14" height="10" viewBox="0 0 14 10" fill="none"
@@ -321,8 +327,11 @@
                             </svg>
                         </div>
                         <div class="card-subcontents">
-                            <h1 class="month-price">
+                            <h1 class="month-price" id="price-3">
                                 $48<small class="small-price">/Month</small>
+                            </h1>
+                            <h1 class="month-price none" id="price3-new">
+                                $70<small class="small-price" >/Month</small>
                             </h1>
                             <div class="tik-infos">
                                 <div class="customer-1">
@@ -459,21 +468,7 @@
 
     </section>
     <script>
-        function check() {
-            var checkBox = document.getElementById("checbox");
-            var text1 = document.getElementsByClassName("text1");
-            var text2 = document.getElementsByClassName("text2");
-            for (var i = 0; i < text1.length; i++) {
-                if (checkBox.checked == true) {
-                    text1[i].style.display = "block";
-                    text2[i].style.display = "none";
-                } else if (checkBox.checked == false) {
-                    text1[i].style.display = "none";
-                    text2[i].style.display = "block";
-                }
-            }
-        }
-        check();                               
+                             
     </script>
 
 
