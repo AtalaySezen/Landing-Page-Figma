@@ -1,0 +1,299 @@
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@500&family=Roboto:wght@300&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    height: 100vh;
+    width: 100%;
+    background-image: url('/images/background.png');
+    font-family: 'Poppins', sans-serif;
+    overflow: hidden;
+}
+button:hover {
+    cursor: pointer;
+}
+
+a:hover {
+    cursor: pointer;
+}
+
+header {
+    height: 99px;
+}
+
+.navbar {
+    margin: 0 auto;
+    width: 100%;
+    display: flex;
+    position: relative;
+    padding: 14px 16px;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    /* background-color: black; */
+}
+
+.logo {
+    flex: 1;
+    order: 1;
+}
+
+.nav-center {
+    order: 2;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.items {
+    padding: 10px 15px;
+}
+
+.items a {
+    text-decoration: none;
+    color: white;
+    font-size: 16px;
+    font-weight: 400;
+
+}
+
+li {
+    list-style: none;
+}
+
+.navbar-right {
+    flex: 1;
+    order: 3;
+    padding: 10px 15px;
+}
+
+.logo img {
+    width: 170px;
+    height: 41px;
+}
+
+.login-btn {
+    width: 44px;
+    height: 18px;
+    font-size: 18px;
+    line-height: 18px;
+    border: none;
+    margin-right: 15px;
+    background-color: transparent;
+    color: rgba(255, 255, 255, 1);
+}
+
+.register-btn {
+    border-radius: 40px;
+    width: 129px;
+    height: 42px;
+    padding: 12px 32px;
+    background-color: #fff;
+}
+
+
+/*Hambürger menü CSSleri*/
+.hamburger-menu>div {
+    width: 35px;
+    height: 5px;
+    background-color: white;
+    margin: 6px 0;
+}
+
+.bar1,
+.bar2,
+.bar3 {
+    width: 35px;
+    height: 5px;
+    background-color: #333;
+    margin: 6px 0;
+    transition: 0.4s;
+}
+
+.change .bar1 {
+    -webkit-transform: rotate(-45deg) translate(-9px, 6px);
+    transform: rotate(-45deg) translate(-9px, 6px);
+}
+
+.change .bar2 {
+    opacity: 0;
+}
+
+.change .bar3 {
+    -webkit-transform: rotate(45deg) translate(-8px, -8px);
+    transform: rotate(45deg) translate(-8px, -8px);
+}
+
+
+.mobile-nav {
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    justify-content: center;
+}
+
+.hamburger-menu {
+    position: absolute;
+    right: 0;
+    padding: 10px 15px;
+    z-index: 2;
+}
+
+.btn-mobile {
+    justify-content: center;
+    align-items: center;
+    width: 129px;
+    height: 42px;
+    background: #FFFFFF;
+    border-radius: 40px;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 100%;
+    text-align: center;
+    color: #000000;
+    border: 0;
+}
+
+.mobile-links {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: black;
+    width: 100%;
+    z-index: 1;
+    padding: 10px 15px;
+    height: 400px;
+}
+
+.mobile-items {
+    margin: 10px 0;
+}
+
+.mobile-items a {
+    text-decoration: none;
+    color: white;
+    font-size: 16px;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 18px;
+    letter-spacing: 0em;
+    text-align: center;
+    padding: 10px 0px;
+}
+
+.hide {
+    display: none;
+}
+
+
+@media(max-width:900px) {
+    .navbar {
+        display: none;
+    }
+}
+
+@media(min-width:900px) {
+    .mobile-nav {
+        display: none;
+    }
+}
+
+/*Form CSS */
+
+.form-area{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: white;
+    width: 400px;
+    height: 500px;
+    border-radius: 50px;
+    margin: 5rem auto;
+    border: 5px solid black;
+
+}
+.form-header{
+    color: black;
+    font-size: 64px;
+    font-weight: 700;
+}
+.form-group{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+.form-group input{
+    width: 300px;
+    height: 30px;
+    font-size: 16px;
+    font-weight: 600;
+    text-align: center;
+    align-items: center;
+    margin: 5px;
+    border-radius: 20px;
+}
+.form-label{
+    display: block;
+    color: black;
+    font-size: 16px;
+    font-weight: 600;    
+}
+.button-register{
+    width: 300px;
+    height: 30px;
+    border: none;
+    color: white;
+    border-radius: 20px;
+    background-color: black;
+    margin-top: 1rem;
+    font-size: 16px;
+    font-weight: 600;    
+}
+.form-group input:focus{
+    border: 2px solid gray;
+}
+.fa-eye{
+    position: absolute;
+    right: 2rem;
+    color: black;
+    font-size: 16px;
+    top: 10rem;
+}
+.eye2{
+    position: absolute;
+    top: 13.7rem;
+}
+.fa-eye:hover{
+    color: gray;
+    transition: 2s;
+}
+.messages-user{
+    display: inline;
+    position: absolute;
+    top: 12rem;
+    text-align: center;
+}
+.error-message{
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    background: red;
+    opacity: 0.8;
+    color: white;
+    border-radius: 50px;
+    width: 200px;
+    height: 43px;
+}
+.hide-error{
+    display: none;
+}
