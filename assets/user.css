@@ -201,3 +201,69 @@ li {
         display: none;
     }
 }
+p{
+    color: white;
+    font-size: 22px;
+    text-transform: uppercase;
+    margin: 15px 0;
+}
+.hide{
+    display: none;
+    visibility: hidden;
+}
+.btn-hide{
+    width: 150px;
+    height: 50px;
+    margin-top: 2rem;
+    text-align: center;
+    background: white;
+    border: none;
+    border-radius: 20px;
+    font-size: 16px;
+    font-weight: 700;
+}
+.info-change{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    margin-top: 3rem;
+    height: 200px;
+    width: 400px;
+    background: white;
+    padding: 10px 15px;
+    border: 2px solid black;
+}
+.info-change input{
+    border: 2px solid black;
+    width: 250px;
+    height: 25px;
+    margin: 5px 0;
+    padding: 10px 15px;
+    border-radius: 20px;
+}
+input::placeholder{
+    font-size: 16px;
+    color: black;
+    font-weight: 500;
+}
+.button-change{
+    width: 150px;
+    height: 30px;
+    border: none;
+    font-size: 16px;
+    font-weight: 600;
+    background: black;
+    color: white;
+    border-radius: 20px;
+}
+.msg-error{
+    border-radius: 35px;
+    text-transform: none;
+    width: 200px;
+    height: 50px;
+    font-size: 16;
+    opacity: 0.7;
+    background-color: red;
+}

@@ -50,14 +50,3 @@ let localEmail = localStorage.getItem("email");
 
 
 
-window.onbeforeunload = function (e) {
-    e = e || window.event;
-  
-    if (e) {
-        e.returnValue = 'Sure?';
-    }
-    return 'Sure?';
-  };
-  
-  
-  
