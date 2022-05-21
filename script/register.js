@@ -71,7 +71,7 @@ form.addEventListener("submit",(e)=>{
         { errorUser.innerHTML = "Email is not correct"
         errorUser.classList.add('error')
         }, 2000);    
-        
+
         return false;
 
     }
@@ -123,14 +123,18 @@ if(rePassword.type==="password"){
 })
 
 
-window.onbeforeunload = function (e) {
-  e = e || window.event;
+// window.onbeforeunload = function (e) {
+//   e = e || window.event;
 
-  if (e) {
-      e.returnValue = 'Sure?';
-  }
-  return 'Sure?';
-};
+//   if (e) {
+//       e.returnValue = 'Sure?';
+//   }
+//   return 'Sure?';
+// };
+
+
+
+
 
 
 
@@ -156,19 +160,6 @@ window.onbeforeunload = function (e) {
 // .then(function(data){
 //     console.log(data);
     
-// })
-
-
-// var name2 = $("#username").val();
-// var passwordT = $("#password").val();
-// var emailT = $("#email").val();
-
-// $.post("./db.json",{
-//     name:name2,
-//     emailT:email,
-//     passwordT:password
-// },function(response){
-//     $("#response").html("<div>"+response.message+"</div>")
 // })
 
 
