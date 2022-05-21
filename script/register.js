@@ -5,69 +5,78 @@ const form = document.getElementById('form');
 const email = document.getElementById('email');
 const errorUser =  document.getElementById('userError');
 
-
-
-//User LocalStorage
 const btn = document.getElementById('register-btn');
+const btnClose = document.getElementById('close-popup');
+const popup = document.getElementById('thanks-message');
 
-btn.addEventListener('click', function saveData(e){
-    let user = document.getElementById("username");
-    localStorage.setItem("server", user.value);
+//Popup kapatma
+btnClose.addEventListener('click',function(){
+  popup.classList.add('error');
+
+})
+
+// Email reg 
+var reg = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
+//Form
+form.addEventListener("submit",(e)=>{
     e.preventDefault();
-  })
+    if(userName.value==""){
+        userName.classList.add('red')
+        errorUser.innerHTML = "username must fill";
+        errorUser.classList.remove('error');
+        setInterval(function () 
+        { errorUser.innerHTML = "Username must fill"
+        errorUser.classList.add('error')
+        }, 1000);    
+        return false;
 
+    }
+    else{
+        userName.classList.add('green');
+    }
+    if(password.value !== rePassword.value){
+        password.classList.add('red')
+        errorUser.innerHTML = "password is not match";
+        errorUser.classList.remove('error');
+        setInterval(function () 
+        { errorUser.innerHTML = "Username must fill"
+        errorUser.classList.add('error')
+        }, 2000);    
+        return false;
+    }
+    else{
+        password.classList.add("green")&rePassword.classList.add("green");
+    }
+    // if (reg.test(email) == false) 
+    // {
+    //     errorUser.innerHTML = "E-mail adress is not correct"
+    //     setInterval(function () 
+    //     { errorUser.innerHTML = "email is not correct"
+    //     errorUser.classList.add('error')
+    //     }, 2000);   
+    // }else{
+    //     (reg.test(email) == true );
+    //     email.classList.add('green')
+    // }
+    let user = document.getElementById("username");
+    let password2 = document.getElementById("password");
+    let email = document.getElementById("email");
+    localStorage.setItem("username", user.value);
+    localStorage.setItem("password",password2.value);
+    localStorage.setItem("email",email.value);
+    document.getElementById('thanks-message').classList.remove('error');
+    document.getElementById('p-thanks').innerHTML = "Thank you for join us! "+ localStorage.getItem("username") +" Please click login."
+    
+    setInterval(function () 
+        { 
+      document.getElementById('thanks-message').classList.add('error');
+      }, 2000);  
 
+  });
 
 
   
 
-
-
-
-//Email reg 
-// var reg = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
-
-// form.addEventListener("submit",(e)=>{
-//     e.preventDefault();
-//     if(userName.value==""){
-//         userName.classList.add('red')
-//         errorUser.innerHTML = "username must fill";
-//         errorUser.classList.remove('error');
-//         setInterval(function () 
-//         { errorUser.innerHTML = "Username must fill"
-//         errorUser.classList.add('error')
-//         }, 1000);    
-//     }
-//     else{
-//         userName.classList.add('green');
-//     }
-//     if(password.value !== rePassword.value){
-//         password.classList.add('red')
-//         errorUser.innerHTML = "password is not match";
-//         errorUser.classList.remove('error');
-//         setInterval(function () 
-//         { errorUser.innerHTML = "Username must fill"
-//         errorUser.classList.add('error')
-//         }, 2000);    
-//         return false;
-//     }
-//     else{
-//         password.value == rePassword.value;
-//         password.classList.add("green")&rePassword.classList.add("green");
-//     }
-//     if (reg.test(email) == false) 
-//     {
-//         errorUser.innerHTML = "E-mail adress is not correct"
-//         setInterval(function () 
-//         { errorUser.innerHTML = "email is not correct"
-//         errorUser.classList.add('error')
-//         }, 2000);   
-//     }else{
-//         (reg.test(email) == true );
-//         email.classList.add('green')
-//     }
-
-// })
 
 
 

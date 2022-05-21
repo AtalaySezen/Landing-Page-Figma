@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login Page</title>
+    <title>Register Page</title>
     <link rel="stylesheet" href="/assets/register.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
@@ -25,7 +25,9 @@
                     <li class="items"><a href="#">Features</a></li>
                 </div>
                 <ul class="navbar-right">
-                    <button class="login-btn">Login</button>
+                    <a href="/login.html">
+                        <button class="login-btn">Login</button>
+                    </a>
                     <button class="register-btn">Register</button>
                 </ul>
         </nav>
@@ -41,7 +43,7 @@
                 <li class="mobile-items"><a href="#">Pricing</a></li>
                 <li class="mobile-items"><a href="#">Solution</a></li>
                 <li class="mobile-items"><a href="#">Features</a></li>
-                <li class="mobile-items"><a href="#">Login</a></li>
+                <li class="mobile-items"><a href="login.html">Login</a></li>
                 <button class="btn-mobile">Register</button>
             </ul>
         </nav>
@@ -54,7 +56,7 @@
           </div>
         
       </div>
-        <form action="" method="" id="form"  class="form-group" name="myForm">
+        <form action=""  id="form"  class="form-group" name="myForm">
             <div class="header-form">
                 <h1 class="form-header" id="header-test">Join Us!</h1>
             </div>
@@ -85,9 +87,14 @@
             <button id="register-btn" class="button-register">
                 Register
             </button>
-            
+            <div class="thanks-popup error" id="thanks-message">
+                <p id="p-thanks">Thank you for join us! name</p>
+                <i class="fa fa-window-close" aria-hidden="true" id="close-popup"></i>
+        
+            </div>
         </form>
     </section>
+    
  
 
 

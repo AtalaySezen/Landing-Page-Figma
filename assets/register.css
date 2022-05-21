@@ -306,3 +306,27 @@ li {
 .green{
     border: 2px solid green;
 }
+
+.thanks-popup{
+    margin: 0 auto;
+    bottom: 15rem;
+    z-index: 999;
+    width: 350px;
+    height: 250px;
+    background-color: white;
+    position: absolute;
+    top: 4rem;
+    left: -1rem;
+    border: 2px solid black;
+    text-align: center;
+}
+.thanks-popup p{
+    font-size: 20px;
+    font-weight: 700;
+    margin: 100px auto;
+}
+.fa-window-close{
+    position: absolute;
+    top: 5.4px;
+    right: 0.3rem;
+}
