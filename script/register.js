@@ -2,22 +2,31 @@ const userName = document.getElementById('username');
 const password = document.getElementById('password');
 const rePassword = document.getElementById('repassword')
 const form = document.getElementById('form');
+
 const email = document.getElementById('email');
 const errorUser =  document.getElementById('userError');
 const reEmail = document.getElementById('email2');
 
+const showPassword2 = document.getElementById('showPassword2')
 const btn = document.getElementById('register-btn');
 const btnClose = document.getElementById('close-popup');
 const popup = document.getElementById('thanks-message');
 
+const showPassword = document.getElementById('showPassword');
+
+
 //Popup kapatma
 btnClose.addEventListener('click',function(){
-  popup.classList.add('error');
-
+    if(rePassword.type==="password"){
+      rePassword.type="text";
+    }
 })
+
 
 // Email reg 
 let reg = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
+
+
 
 //Form
 form.addEventListener("submit",(e)=>{
@@ -62,8 +71,11 @@ form.addEventListener("submit",(e)=>{
         { errorUser.innerHTML = "Email is not correct"
         errorUser.classList.add('error')
         }, 2000);    
+        
         return false;
+
     }
+
 
     let user = document.getElementById("username");
     let password2 = document.getElementById("password");
@@ -82,16 +94,43 @@ form.addEventListener("submit",(e)=>{
         document.location.href = "user.html",true;
       }, 3000);  
 
-
-
-
-
   });
 
+  showPassword.addEventListener('click',function(){
+    if(password.type==="password"){
+      password.type="text"
+    }else{
+      password.type ="password";
+    }
+    if(rePassword.type==="password"){
+      rePassword.type="text"
+    }else{
+      rePassword.type ="password";
+    }
+})
+
+showPassword2.addEventListener('click',function(){
+if(password.type==="password"){
+  password.type="text"
+}else{
+  password.type ="password";
+}
+if(rePassword.type==="password"){
+  rePassword.type="text"
+}else{
+  rePassword.type ="password";
+}
+})
 
 
+window.onbeforeunload = function (e) {
+  e = e || window.event;
 
-
+  if (e) {
+      e.returnValue = 'Sure?';
+  }
+  return 'Sure?';
+};
 
 
 
