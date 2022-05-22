@@ -84,9 +84,13 @@ form.addEventListener("submit",(e)=>{
     localStorage.setItem("email",email.value);
     document.getElementById('thanks-message').classList.remove('error');
     document.getElementById('p-thanks').innerHTML = "Thank you for join us! "+ localStorage.getItem("username") +" Please click login or wait."
+   
     setInterval(function () 
         { 
       document.getElementById('thanks-message').classList.add('error');
+      //Loader gif burada çalışması sağlanıyor. 
+      document.getElementById('loader-gif').style.display = "block"
+      document.getElementById('form-area').style.display="none"
       }, 2000);  
       
       setInterval(function () 

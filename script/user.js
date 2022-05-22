@@ -6,12 +6,14 @@ let localEmail = localStorage.getItem("email");
 const welcomeMsg = document.getElementById('welcome-message');
 welcomeMsg.innerHTML = "Welcome " + localUser + "";
 
+//P tagleri mail etc.
 const mailInfo = document.getElementById('mail-info');
 const passInfo = document.getElementById('password-info');
 
 mailInfo.innerHTML = "Your mail adress is "+localEmail;
 passInfo.innerHTML = "Your password is "+localPassword;
 
+//Bilgileri saklama
 document.getElementById('click-hide').addEventListener('click',()=>{
     mailInfo.classList.toggle("hide");
     passInfo.classList.toggle("hide");
@@ -22,12 +24,15 @@ document.getElementById('click-change').addEventListener('click',()=>{
     document.getElementById('info-change').classList.toggle("hide");
 })
 
+//Dom elementlerini seçelim:
 const newUser = document.getElementById("changeUser");
 const newPassword = document.getElementById("changePassword");
 const newEmail= document.getElementById("changeEmail");
-
 const errorMsg = document.getElementById("errorMsg");
 
+
+document.getElementById('login-btn').style.display = "none";
+document.getElementById('register-btn').style.display = "none";
 
 
 
@@ -55,6 +60,8 @@ document.getElementById('change-btn').addEventListener('click',()=>{
     location.reload();
 })
 
+
+//BG Color
 let pList = document.querySelectorAll('p');
 
 let aList = document.querySelectorAll('a');
@@ -72,9 +79,7 @@ document.getElementById('bg-white').addEventListener('click',()=>{
     for (let i = 0; i < aList.length; i++) {
         aList[i].style.color = "black";    
     }
-    for (let i = 0; i < buttonList.length; i++) {
-        buttonList[i].style.color = "black";    
-    }
+
     document.getElementById('bg-white').style.display = "none"
     document.getElementById('bg-black').style.display = "inline";
 
@@ -87,15 +92,19 @@ document.getElementById('bg-black').addEventListener('click',()=>{
 
         pList[i].style.color = "white";    
     }
+
     welcomeMsg.style.color = "white"
     for (let i = 0; i < aList.length; i++) {
         aList[i].style.color = "white";    
     }
-    for (let i = 0; i < buttonList.length; i++) {
-        buttonList[i].style.color = "black";    
-    }
+    // for (let i = 0; i < buttonList.length; i++) {
+    //     buttonList[i].style.color = "black"
+    // }
+
     document.getElementById('bg-white').style.display = "inline"
     document.getElementById('bg-black').style.display = "none";
 
 })
+
+
 

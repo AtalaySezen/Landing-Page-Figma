@@ -330,3 +330,9 @@ li {
     top: 5.4px;
     right: 0.3rem;
 }
+.loader{
+    position: absolute;
+    top: 17rem;
+    left: 40rem;
+    display: none;
+}
