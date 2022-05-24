@@ -292,13 +292,15 @@ li {
     justify-content: center;
     align-items: center;
     background: red;
-    opacity: 0.8;
+    opacity: 0.6;
     color: white;
+    font-size: 12px;
+    font-weight: 500;
     border-radius: 50px;
     width: 200px;
-    height: 43px;
+    height: 40px;
 }
-.error{
+.error-none{
     display: none;
 }
 .red{
@@ -357,4 +359,9 @@ li {
 }
 .fa-google, .fa-facebook:hover{
     cursor: pointer;
+}
+.fa-window-close{
+    position: absolute;
+    right: 7px;
+    top: 0.3rem;
 }

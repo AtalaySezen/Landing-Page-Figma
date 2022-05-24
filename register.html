@@ -55,12 +55,14 @@
     
     <section class="form-area" id="form-area">
       <div class="messages-user">
-          <div class="error-message hide-error error" id="userError">
-            <p></p>
+          <div class="error-message error-none " id="error-show">
+            <p id="userError"></p>
+            <i class="fa fa-window-close" aria-hidden="true" id="close-error"></i>
+
           </div>
         
       </div>
-        <form action=""  id="form"  class="form-group" name="myForm">
+        <section  id="form"  class="form-group" name="myForm">
             <div class="header-form">
                 <h1 class="form-header" id="header-test">Register Form</h1>
             </div>
@@ -84,23 +86,24 @@
                 <label class="form-label" for="">Email:</label>
                 <input  type="text" id="email">
             </div>
-            <button id="register-btn" class="button-register">
-                Register
-            </button>
-            <div class="thanks-popup error" id="thanks-message">
+            <div class="thanks-popup error-none" id="thanks-message">
                 <p id="p-thanks" style="text-transform:uppercase">Thank you for join us!    </p>
                 <i class="fa fa-window-close" aria-hidden="true" id="close-popup"></i>
-        
             </div>
+        
             <div class="auth">
                 <i class="fa-brands fa-google"></i>
                 <i class="fa-brands fa-facebook"></i>
   
               </div>
-        </form>
-    </section>
+              <button id="register-btn" onsubmit="return false" onclick="registerUser()" class="button-register">
+                Register
+            </button>
+        </section>
     
- 
+     
+    </section>
+
 
 
     <script src="/script/register.js"></script>

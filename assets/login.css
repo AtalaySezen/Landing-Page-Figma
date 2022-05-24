@@ -315,15 +315,16 @@ li {
     width: 200px;
     height: 45px;
 }
+.error-none{
+    display: none;
+}
 .fa-window-close{
     position: absolute;
     right: 11px;
     top: 5px;
     font-size: 12px;
 }
-.error-none{
-    display: none;
-}
+
 .fa-google, .fa-facebook:hover{
     cursor: pointer;
 }
