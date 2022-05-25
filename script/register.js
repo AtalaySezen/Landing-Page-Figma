@@ -64,7 +64,8 @@ let errorMsg = document.getElementById("error-show");
 let errorText = document.getElementById("userError");
 
 
-function registerUser(e) {
+
+function registerUser2(e) {
 	//yeni üyelerin kaydedilmesi
 	let registerUsername = document.getElementById('username').value
 	let registerPassword = document.getElementById('password').value
@@ -78,14 +79,20 @@ function registerUser(e) {
 	for(var i = 0; i < objPeople.length; i++) {
 		// Kullanıcı var mı diye kontrol ediş kısmı.
 		if(registerUsername == objPeople[i].username) {
+
 			// Kullanıcı adı var ise hata verilecek. 
 			errorMsg.classList.remove("error-none");
 			errorText.innerHTML = "Bu kullanıcı adı daha önce alındı."
 			break
+
 			//Şifre kontrol alanı 8`den küçük ise hata çıkar.
 		} else if (registerPassword.length < 8) {
 			errorMsg.classList.remove("error-none");
 			errorText.innerHTML = "Şifre 8 karakterden fazla olmalı"
+      password.classList.add('red');
+      rePassword.classList.add('red');
+
+
 			break
 		}
 	}
@@ -96,7 +103,6 @@ function registerUser(e) {
 
 //   localStorage.setItem(`key${objPeople}`, JSON.stringify(newUser)) 
 //   objPeople += 1  
-
 }
 console.log(objPeople)
 
@@ -132,6 +138,36 @@ allStorage();
 // }
 
 
+function emailCheck(){
+  // Email reg 
+let reg = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
+if(email.value.match(reg)&& email.value==reEmail.value){
+        email.classList.add('green');
+        reEmail.classList.add('green')
+      }
+      else{
+          email.classList.add('red')
+          errorUser.innerHTML = "email is not correct";
+          errorUser.classList.remove('error');
+          reEmail.classList.add('red');
+          setInterval(function () 
+          { errorUser.innerHTML = "Email is not correct"
+          errorUser.classList.add('error')
+          }, 2000);    
+  
+      }
+  
+
+}
+
+
+//Tüm Fonksiyonlar burada çalışacak tek seferde 
+function registerUser(){
+
+  registerUser2() 
+  emailCheck()
+
+}
 
 
 
@@ -140,10 +176,6 @@ allStorage();
 
 
 
-
-
-// // Email reg 
-// let reg = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
 
 
 
@@ -177,25 +209,7 @@ allStorage();
 //     else{
 //         password.classList.add("green")&rePassword.classList.add("green");
 //     }
-//     if(email.value.match(reg)&& email.value==reEmail.value){
-//       email.classList.add('green');
-//       reEmail.classList.add('green')
-//     }
-//     else{
-//         email.classList.add('red')
-//         errorUser.innerHTML = "email is not correct";
-//         errorUser.classList.remove('error');
-//         reEmail.classList.add('red');
-//         setInterval(function () 
-//         { errorUser.innerHTML = "Email is not correct"
-//         errorUser.classList.add('error')
-//         }, 2000);    
-
-//         return false;
-
-//     }
-
-
+//    
 //     let user = document.getElementById("username");
 //     let password2 = document.getElementById("password");
 //     localStorage.setItem("username", user.value);
