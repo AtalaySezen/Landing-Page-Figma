@@ -1,209 +1,108 @@
-const userName = document.getElementById('username');
-const password = document.getElementById('password');
-const form = document.getElementById('form');
-const email = document.getElementById('email');
-const showPassword2 = document.getElementById('showPassword2')
-const btn = document.getElementById('register-btn');
-const btnClose = document.getElementById('close-popup');
-const popup = document.getElementById('thanks-message');
-const showPassword = document.getElementById('showPassword');
+const userInput = document.getElementById('username');
+const passwordInput = document.getElementById('password');
+const rePassword = document.getElementById('repassword');
 
+const emailInput = document.getElementById('email');
 
-//Hata mesajı kapatma
-document.getElementById('close-error').addEventListener('click',()=>{
-	errorMsg.classList.add('error-none');
-})
-// Create a registration system
-var objPeople = [
-	{
-		username: 'test1',
-		password: 'test123456'
-	},
-	{
-		username: 'deneme1',
-		password: 'denemeler12'
-	},
-	{
-		username: 'javascriptdevamke',
-		password: 'devamke123'
+const errorShow = document.getElementById('error-show');
+const errorMessage = document.getElementById('userError');
+
+//User
+function userCheck(){
+    if(userInput.value.length<6){
+       userInput.classList.add('red');
+	   errorShow.classList.remove('error-none');
+	   errorMessage.innerHTML = "Kullanıcı adı 6 karakterden fazla olmalı"
+	}else if(
+       userInput.value.length>20
+	){
+	   userInput.classList.add('red');
+	   errorShow.classList.remove('error-none');
+	   errorMessage.innerHTML = "Kullanıcı adı 20 karakterden fazla olamaz"
+	}else{
+		userInput.classList.add('green');
+		errorShow.classList.add('error-none');
 	}
-]
-
-function allStorage() {
-
-    let values = [],
-        keys = Object.keys(localStorage),
-        i = keys.length;
-
-    while ( i-- ) {
-        values.push(localStorage.getItem(keys[i]) );
-    }
-	
-	console.log(values)
-    return values;
-}s
-
-allStorage();
-
-	function login() {
-	//Kullanıcı ve şifre bilgilerininin alınması
-	let username = document.getElementById('username').value
-	let password = document.getElementById('password').value
-
-	//Object`de kayıtlı olan kullanıcı adı ve şifrenin varlığının kontrol edilmesi.
-	for(var i = 0; i < objPeople.length; i++) {
-	
-	
-
-
-    if(username == objPeople[i].username && password == objPeople[i].password) {
-			console.log(username + ' is logged in!!!')
-			//Break ile tamam ise durması için.
-			break
-		}
-    else {
-			//Şifre vs. hatalı ise bu alan çalışır.
-			console.log('incorrect username or password')
-		}
-	}
-
 }
 
-//Kırmızı hata popup
-let errorMsg = document.getElementById("error-show");
-let errorText = document.getElementById("userError");
-
-//Kullanıcı kaydının yapılması ve username kontrolü
-let registerUsername = document.getElementById('username').value
-let registerPassword = document.getElementById('password').value
-
-function registerCheckUser() {
-	let registerUsername = document.getElementById('username').value
-	let registerPassword = document.getElementById('password').value
-	// obje olarak eklenmesi
-	let newUser = {
-		username: registerUsername,
-		password: registerPassword
+//Pass Validation
+function passwordCheck(){
+	if(passwordInput.value.length<6){
+		passwordInput.classList.add('red');
+		rePassword.classList.add('red');
+		errorShow.classList.remove('error-none');
+		errorMessage.innerHTML = "Şifre 6 karakterden fazla olmalı"
 	}
-
-	for(var i = 0; i < objPeople.length; i++) {
-		// Kullanıcı var mı diye kontrol ediş kısmı.
-
-		if(registerUsername == objPeople[i].username) {
-			// Kullanıcı adı var ise hata verilecek. 
-			document.getElementById('error-show').classList.remove('error-none');
-			errorText.innerHTML = "Bu kullanıcı adı daha önce alındı."
-
-		}else if(registerUsername ===""){
-			document.getElementById('error-show').classList.remove('error-none');
-			errorText.innerHTML = "Kullanıcı adı doldurulmalı"
-			document.getElementById('username').classList.add('red');
-
-		}else if(registerUsername != objPeople[i].username){
-			userName.classList.remove('red');
-			userName.classList.add('green');
-		}
+	else if(passwordInput.value.length>20){
+		passwordInput.classList.add('red');
+		errorShow.classList.remove('error-none');
+		errorMessage.innerHTML = "Şifre 20 karakterden fazla olamaz"
+	}else if(
+		passwordInput.value != rePassword.value){
+			passwordInput.classList.add('red');
+			rePassword.classList.add('red')
+			passwordInput.classList.add('red');
+			errorShow.classList.remove('error-none');
+			errorMessage.innerHTML = "Şifreler aynı olmalı"
+	}else{
+		passwordInput.classList.add('green');
+		rePassword.classList.add('green');
+		errorShow.classList.add('error-none');
 	}
-
-
-//diziye yeni eleman ekleme ve bu elemanları local storage`a kaydetme
-
-objPeople.push(newUser)
-localStorage.setItem(`username${objPeople}`,JSON.stringify(newUser))
-newUser+=1
-}
-
-//Objelerin yazdırılması
-console.log(objPeople)
-//LocalStorage`a hepsinin kayıt edilmesi
-
-
+};
 
 //Email validasyonu
-
 function emailCheck(){
-// Email reg 
-let reg = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
-if(email.value.match(reg)){
-       	 email.classList.add('green');
+	let reg = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
+	if(emailInput.value.match(reg)){
+       	 emailInput.classList.add('green');
       }
       else{
-		errorMsg.classList.remove("error-none");
-		errorText.innerHTML = "Mail adresi hatalı"
-		email.classList.add('red');
+		errorShow.classList.remove("error-none");
+		errorMessage.innerHTML = "Mail adresi hatalı"
+		emailInput.classList.add('red');
       }
+};
+
+function register() {
+    localStorage.setItem("username", userInput.value);
+    localStorage.setItem("password", passwordInput.value);
+    localStorage.setItem("email", emailInput.value);
+}
+const userLogin = document.getElementById("loginUser");
+const passwordUser = document.getElementById("loginPassword");
+
+function login(){
+	let checkUser = localStorage.getItem("username");
+	let checkPassword = localStorage.getItem("password");
+
+	if(checkUser===userLogin.value && checkPassword===passwordUser.value){
+		sessionStorage.setItem("isLogged",true)
+	}else{
+		console.log(1)
+	}
+
+	userPage();
 }
 
 
-//Şifre Validasyonu
-function passwordCheck(){
-	let passwordInput = document.getElementById('password').value;
-	let rePassword = document.getElementById('repassword').value;
-	//Value olmadan
-	let password = document.getElementById('password');
-	let Repassword =document.getElementById('repassword');
+function userPage(){
+	let isLogged = sessionStorage.getItem("isLogged")
+	if(isLogged !=null){
+		console.log("hoşgeldin kullanıcı kardeş")
 
-	if(passwordInput.length<6 && rePassword.length<6){
-		password.classList.add('red');
-		Repassword.classList.add('red');
-		errorMsg.classList.remove('error-none');
-		errorText.innerHTML = "Şifre 6 karakterden kısa"
-
-	}else if(passwordInput !=rePassword){
-		errorMsg.classList.remove('error-none');
-		errorText.innerHTML = "Şifreler aynı olmalı"
 	}else{
-		password.classList.add('green');
-		Repassword.classList.add('green');
+		console.log(145)
 	}
 
 }
 
 
-//Tüm Fonksiyonlar burada çalışacak tek seferde 
+//Tüm validasyonların çalıştırılması
 function validateRegister(){
- 	registerCheckUser();  
- 	emailCheck();
+	userCheck();
 	passwordCheck();
-
+	emailCheck();
+	register();
 }
-
-
-
-
-
-
-
-// //Maps ile deneme olmadı :) 
-// function registerUser(e){
-
-// let registerUsername = document.getElementById('username').value
-// let registerPassword = document.getElementById('password').value
-
-// 	const users = new Map();
-
-// 	users.set("1:Username",registerUsername);
-// 	users.set("1:Password",registerPassword)
-
-
-// 	console.log(users);
-// }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
