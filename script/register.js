@@ -1,15 +1,11 @@
 const userName = document.getElementById('username');
 const password = document.getElementById('password');
-const rePassword = document.getElementById('repassword')
 const form = document.getElementById('form');
-
 const email = document.getElementById('email');
-
 const showPassword2 = document.getElementById('showPassword2')
 const btn = document.getElementById('register-btn');
 const btnClose = document.getElementById('close-popup');
 const popup = document.getElementById('thanks-message');
-
 const showPassword = document.getElementById('showPassword');
 
 
@@ -17,8 +13,6 @@ const showPassword = document.getElementById('showPassword');
 document.getElementById('close-error').addEventListener('click',()=>{
 	errorMsg.classList.add('error-none');
 })
-
-
 // Create a registration system
 var objPeople = [
 	{
@@ -35,77 +29,6 @@ var objPeople = [
 	}
 ]
 
-
-
-// login functionality
-function login() {
-	//Kullanıcı ve şifre bilgilerininin alınması
-	let username = document.getElementById('username').value
-
-	let password = document.getElementById('password').value
-
-	//Object`de kayıtlı olan kullanıcı adı ve şifrenin varlığının kontrol edilmesi.
-	for(var i = 0; i < objPeople.length; i++) {
-
-    if(username == objPeople[i].username && password == objPeople[i].password) {
-			console.log(username + ' is logged in!!!')
-			//Break ile tamam ise durması için.
-			break
-		}
-    else {
-			//Şifre vs. hatalı ise bu alan çalışır.
-			console.log('incorrect username or password')
-		}
-	}
-}
-
-//Kırmızı hata popup
-let errorMsg = document.getElementById("error-show");
-let errorText = document.getElementById("userError");
-
-
-
-function registerUser2(e) {
-	//yeni üyelerin kaydedilmesi
-	let registerUsername = document.getElementById('username').value
-	let registerPassword = document.getElementById('password').value
-	
-	// obje olarak eklenmesi
-	let newUser = {
-		username: registerUsername,
-		password: registerPassword
-	}
-
-	for(var i = 0; i < objPeople.length; i++) {
-		// Kullanıcı var mı diye kontrol ediş kısmı.
-		if(registerUsername == objPeople[i].username) {
-
-			// Kullanıcı adı var ise hata verilecek. 
-			errorMsg.classList.remove("error-none");
-			errorText.innerHTML = "Bu kullanıcı adı daha önce alındı."
-			break
-
-			//Şifre kontrol alanı 8`den küçük ise hata çıkar.
-		} else if (registerPassword.length < 8) {
-			errorMsg.classList.remove("error-none");
-			errorText.innerHTML = "Şifre 8 karakterden fazla olmalı"
-      password.classList.add('red');
-      rePassword.classList.add('red');
-
-
-			break
-		}
-	}
-  //diziye yeni eleman ekleme ve bu elemanları local storage`a kaydetme
-  objPeople.push(newUser)
-  localStorage.setItem(`username${objPeople}`,JSON.stringify(newUser))
-  newUser+=1
-
-//   localStorage.setItem(`key${objPeople}`, JSON.stringify(newUser)) 
-//   objPeople += 1  
-}
-console.log(objPeople)
-
 function allStorage() {
 
     let values = [],
@@ -118,8 +41,137 @@ function allStorage() {
 	
 	console.log(values)
     return values;
-}
+}s
+
 allStorage();
+
+	function login() {
+	//Kullanıcı ve şifre bilgilerininin alınması
+	let username = document.getElementById('username').value
+	let password = document.getElementById('password').value
+
+	//Object`de kayıtlı olan kullanıcı adı ve şifrenin varlığının kontrol edilmesi.
+	for(var i = 0; i < objPeople.length; i++) {
+	
+	
+
+
+    if(username == objPeople[i].username && password == objPeople[i].password) {
+			console.log(username + ' is logged in!!!')
+			//Break ile tamam ise durması için.
+			break
+		}
+    else {
+			//Şifre vs. hatalı ise bu alan çalışır.
+			console.log('incorrect username or password')
+		}
+	}
+
+}
+
+//Kırmızı hata popup
+let errorMsg = document.getElementById("error-show");
+let errorText = document.getElementById("userError");
+
+//Kullanıcı kaydının yapılması ve username kontrolü
+let registerUsername = document.getElementById('username').value
+let registerPassword = document.getElementById('password').value
+
+function registerCheckUser() {
+	let registerUsername = document.getElementById('username').value
+	let registerPassword = document.getElementById('password').value
+	// obje olarak eklenmesi
+	let newUser = {
+		username: registerUsername,
+		password: registerPassword
+	}
+
+	for(var i = 0; i < objPeople.length; i++) {
+		// Kullanıcı var mı diye kontrol ediş kısmı.
+
+		if(registerUsername == objPeople[i].username) {
+			// Kullanıcı adı var ise hata verilecek. 
+			document.getElementById('error-show').classList.remove('error-none');
+			errorText.innerHTML = "Bu kullanıcı adı daha önce alındı."
+
+		}else if(registerUsername ===""){
+			document.getElementById('error-show').classList.remove('error-none');
+			errorText.innerHTML = "Kullanıcı adı doldurulmalı"
+			document.getElementById('username').classList.add('red');
+
+		}else if(registerUsername != objPeople[i].username){
+			userName.classList.remove('red');
+			userName.classList.add('green');
+		}
+	}
+
+
+//diziye yeni eleman ekleme ve bu elemanları local storage`a kaydetme
+
+objPeople.push(newUser)
+localStorage.setItem(`username${objPeople}`,JSON.stringify(newUser))
+newUser+=1
+}
+
+//Objelerin yazdırılması
+console.log(objPeople)
+//LocalStorage`a hepsinin kayıt edilmesi
+
+
+
+//Email validasyonu
+
+function emailCheck(){
+// Email reg 
+let reg = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
+if(email.value.match(reg)){
+       	 email.classList.add('green');
+      }
+      else{
+		errorMsg.classList.remove("error-none");
+		errorText.innerHTML = "Mail adresi hatalı"
+		email.classList.add('red');
+      }
+}
+
+
+//Şifre Validasyonu
+function passwordCheck(){
+	let passwordInput = document.getElementById('password').value;
+	let rePassword = document.getElementById('repassword').value;
+	//Value olmadan
+	let password = document.getElementById('password');
+	let Repassword =document.getElementById('repassword');
+
+	if(passwordInput.length<6 && rePassword.length<6){
+		password.classList.add('red');
+		Repassword.classList.add('red');
+		errorMsg.classList.remove('error-none');
+		errorText.innerHTML = "Şifre 6 karakterden kısa"
+
+	}else if(passwordInput !=rePassword){
+		errorMsg.classList.remove('error-none');
+		errorText.innerHTML = "Şifreler aynı olmalı"
+	}else{
+		password.classList.add('green');
+		Repassword.classList.add('green');
+	}
+
+}
+
+
+//Tüm Fonksiyonlar burada çalışacak tek seferde 
+function validateRegister(){
+ 	registerCheckUser();  
+ 	emailCheck();
+	passwordCheck();
+
+}
+
+
+
+
+
 
 
 // //Maps ile deneme olmadı :) 
@@ -138,136 +190,7 @@ allStorage();
 // }
 
 
-function emailCheck(){
-  // Email reg 
-let reg = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
-if(email.value.match(reg)&& email.value==reEmail.value){
-        email.classList.add('green');
-        reEmail.classList.add('green')
-      }
-      else{
-          email.classList.add('red')
-          errorUser.innerHTML = "email is not correct";
-          errorUser.classList.remove('error');
-          reEmail.classList.add('red');
-          setInterval(function () 
-          { errorUser.innerHTML = "Email is not correct"
-          errorUser.classList.add('error')
-          }, 2000);    
-  
-      }
-  
 
-}
-
-
-//Tüm Fonksiyonlar burada çalışacak tek seferde 
-function registerUser(){
-
-  registerUser2() 
-  emailCheck()
-
-}
-
-
-
-
-
-
-
-
-
-
-
-// //Form
-// form.addEventListener("submit",(e)=>{
-//     e.preventDefault();
-//     if(userName.value==""){
-//         userName.classList.add('red')
-//         errorUser.innerHTML = "username must fill";
-//         errorUser.classList.remove('error');
-//         setInterval(function () 
-//         { errorUser.innerHTML = "Username must fill"
-//         errorUser.classList.add('error')
-//         }, 1000);    
-//         return false;
-//     }
-//     else{
-//         userName.classList.add('green');
-//     }
-//     if(password.value !== rePassword.value||password.value==""&&rePassword.value==""){
-//         password.classList.add('red');
-//         rePassword.classList.add('red');
-//         errorUser.innerHTML = "password is not match or empty";
-//         errorUser.classList.remove('error');
-//         setInterval(function () 
-//         { errorUser.innerHTML = "Username must fill"
-//         errorUser.classList.add('error')
-//         }, 2000);    
-//         return false;
-//       }
-//     else{
-//         password.classList.add("green")&rePassword.classList.add("green");
-//     }
-//    
-//     let user = document.getElementById("username");
-//     let password2 = document.getElementById("password");
-//     localStorage.setItem("username", user.value);
-//     localStorage.setItem("password",password2.value);
-//     localStorage.setItem("email",email.value);
-//     document.getElementById('thanks-message').classList.remove('error');
-//     document.getElementById('p-thanks').innerHTML = "Thank you for join us! "+ localStorage.getItem("username") +" Please click login or wait."
-   
-//     setInterval(function () 
-//         { 
-//       document.getElementById('thanks-message').classList.add('error');
-//       //Loader gif burada çalışması sağlanıyor. 
-//       document.getElementById('loader-gif').style.display = "block"
-//       document.getElementById('form-area').style.display="none"
-//       }, 2000);  
-      
-//       setInterval(function () 
-//       { 
-//         document.location.href = "user.html",true;
-//       }, 3000);  
-
-//   });
-
-//   showPassword.addEventListener('click',function(){
-//     if(password.type==="password"){
-//       password.type="text"
-//     }else{
-//       password.type ="password";
-//     }
-//     if(rePassword.type==="password"){
-//       rePassword.type="text"
-//     }else{
-//       rePassword.type ="password";
-//     }
-// })
-
-// showPassword2.addEventListener('click',function(){
-// if(password.type==="password"){
-//   password.type="text"
-// }else{
-//   password.type ="password";
-// }
-// if(rePassword.type==="password"){
-//   rePassword.type="text"
-// }else{
-//   rePassword.type ="password";
-// }
-// })
-
-
-// // window.onbeforeunload = function (e) {
-// //   e = e || window.event;
-
-// //   if (e) {
-// //       e.returnValue = 'Sure?';
-// //   }
-// //   return 'Sure?';
-// // };
 
 
 

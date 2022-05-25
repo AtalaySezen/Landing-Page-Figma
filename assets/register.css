@@ -9,7 +9,6 @@ body{
     width: 100%;
     background-color: #bdd4e7;
     background-image: linear-gradient(315deg, #bdd4e7 0%, #8693ab 74%);
-    
     font-family: 'Poppins', sans-serif;
     overflow: hidden;
 }
@@ -306,9 +305,6 @@ li {
 .red{
     border: 2px solid red;
 }
-.green{
-    border: 2px solid green;
-}
 
 .thanks-popup{
     margin: 0 auto;
@@ -364,4 +360,7 @@ li {
     position: absolute;
     right: 7px;
     top: 0.3rem;
+}
+.green{
+    border: 2px solid green;
 }
