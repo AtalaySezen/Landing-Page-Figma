@@ -1,14 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login Page</title>
     <link rel="stylesheet" href="./assets/login.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+        integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
 
 </head>
+
 <body>
     <header>
         <nav>
@@ -30,7 +34,7 @@
                         <button class="login-btn">Login</button>
                     </a>
                     <a href="/register.html">
-                    <button class="register-btn">Register</button>
+                        <button class="register-btn">Register</button>
 
                     </a>
                 </ul>
@@ -55,46 +59,34 @@
     <section class="form-area">
         <div class="messages-user">
             <div class="error-message error-none" id="userMessage">
-                <p id="userMsg" ></p>
+                <p id="userMsg"></p>
                 <i class="fa fa-window-close" aria-hidden="true" id="close-error"></i>
 
-            </div> 
-        </div>
-          <form action="" method="" id="form"  class="form-group" name="myForm">
-          
-            <div class="header-form">
-                  <h1 class="form-header" id="header-test">Welcome</h1>
-              </div>
-              <div class="username-input">
-                  <label class="form-label" for="">Username or Email:</label>
-                  <input name="Name" type="text" autocomplete="off" id="loginUser">
-              </div>
-              <div class="password-input">
-                  <label class="form-label" for="">Password:</label>
-                  <input  type="password" id="loginPassword" >
-                  <i class="fa fa-eye" id="showPassword" aria-hidden="true"></i>
-              </div>
-            
-
-             
-              <div class="auth">
-              <i class="fa-brands fa-google"></i>
-              <i class="fa-brands fa-facebook"></i>
-
             </div>
-
-
-              
-          </form>
-          <button id="login-btn" onclick="login()" class="button-register">
-            Login
-        </button>
-      </section>
-      
-     
-
-
-   <!-- <script src="/script/login.js"></script> -->
-   <script src="/script/register.js"></script>
+        </div>
+        <div id="form" class="form-group" name="myForm">
+            <div class="header-form">
+                <h1 class="form-header" id="header-test">Welcome</h1>
+            </div>
+            <div class="username-input">
+                <label class="form-label" for="">Username or Email:</label>
+                <input name="Name" type="text" autocomplete="off" id="loginUser">
+            </div>
+            <div class="password-input">
+                <label class="form-label" for="">Password:</label>
+                <input type="password" id="loginPassword">
+                <i class="fa fa-eye" id="showPassword" aria-hidden="true"></i>
+            </div>
+            <button id="login-btn" onclick="login()" class="button-register">
+                Login
+            </button>
+            <div class="auth">
+                <i class="fa-brands fa-google"></i>
+                <i class="fa-brands fa-facebook"></i>
+            </div>
+        </div>
+    </section>
+    <script src="/script/register.js"></script>
 </body>
+
 </html>

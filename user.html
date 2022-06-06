@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,7 +8,8 @@
     <title>User</title>
     <link rel="stylesheet" href="/assets/user.css">
 </head>
-<body>
+
+<body onload="accessLogged()">
     <header>
         <nav>
             <ul class="navbar">
@@ -27,10 +29,7 @@
                     <a href="/login.html">
                         <button class="login-btn" id="login-btn">Login</button>
                     </a>
-                    <a href="/index.html">
-                    <button class="logout-btn" id="logout-btn">Logout</button>
-
-                    </a>
+                    <button class="logout-btn" id="logout-btn" onclick="logOut()">Logout</button>
                 </ul>
         </nav>
         <nav class="mobile-nav">
@@ -53,11 +52,11 @@
     <button id="bg-white">Click For White</button>
     <button id="bg-black">Click For Black</button>
 
-    <h1 id="welcome-message" style="text-transform:uppercase; color: white;">    </h1>
+    <h1 id="welcome-message" style="text-transform:uppercase; color: white;"> </h1>
 
     <p style="color:white;" id="password-info"></p>
     <p id="mail-info"></p>
-    
+
     <button class="btn-hide" id="click-hide">Click For Hide And Show Info</button>
     <button class="btn-hide" id="click-change">Click For Change Infos</button>
     <div class="info-change hide" id="info-change">
@@ -74,4 +73,5 @@
 
 
 <script src="/script/user.js"></script>
+
 </html>
